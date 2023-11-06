@@ -1,5 +1,7 @@
-//buscador
-document.getElementById("inputSearch").addElementListener("keyup", buscador_interno);
+
+
+/*//buscador
+document.getElementById("inputSearch").addEventListener("keyup", buscador_interno);
 
 function buscador_interno() {
     filter = inputSearch.value.toUpperCase();
@@ -19,4 +21,6 @@ function buscador_interno() {
             li[i].style.dispay = "none";
         }
     }
-}
+}*/
+const face = document.getElementById("faceboock");
+face.onmousemove(src="Imgs/Faceboock1.png");

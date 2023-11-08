@@ -1,3 +1,5 @@
+
+
 body {
     background-color: rgb(252, 203, 240);
 }
@@ -44,7 +46,7 @@ body {
 
 }
 
-.iconosRedes ul li a img:hover{
+.iconosRedes ul li:hover a{
     filter: none;
     transform: translateY(-5px) scale(1,1);
 }

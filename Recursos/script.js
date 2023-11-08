@@ -22,5 +22,17 @@ function buscador_interno() {
         }
     }
 }*/
-const face = document.getElementById("faceboock");
-face.onmousemove(src="Imgs/Faceboock1.png");
+// Cambiar imagen por imagen a color
+
+function cambiarImg(img) {
+    document.getElementById('faceboock').src = img;
+    //alert(img);
+}
+function cambiarImg1(img) {
+    document.getElementById('whatsapp').src = img;
+    //alert(img);
+}
+function cambiarImg2(img) {
+    document.getElementById('instagram').src = img;
+    //alert(img);
+}

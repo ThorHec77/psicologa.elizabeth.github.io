@@ -26,16 +26,16 @@
               Tratamientos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#TerOnline">Terapia online</a></li>
-              <li><a class="dropdown-item" href="#">Terapia adolecentes</a></li>
-              <li><a class="dropdown-item" href="#">Terapia mayores</a></li>
-              <li><a class="dropdown-item" href="#">Terapia de parejas</a></li>
-              <li><a class="dropdown-item" href="#">Ataques de panico</a></li>
-              <li><a class="dropdown-item" href="#">Deprecion</a></li>
-              <li><a class="dropdown-item" href="#">Autoestima</a></li>
-              <li><a class="dropdown-item" href="#">Trastornos de la infancia y adolecencia</a></li>
-              <li><a class="dropdown-item" href="#">Oreientacion vocacional</a></li>
-              <li><a class="dropdown-item" href="#">Psicodiagnóstico Clínico</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerOnline">Terapia online</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerAdolecentes">Terapia adolecentes</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerMayores">Terapia mayores</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerParejas">Terapia de parejas</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerPanico">Ataques de panico</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerDeprecion">Deprecion</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerAutoestima">Autoestima</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerInfancia">Trastornos de la infancia y adolecencia</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerVocacional">Oreientacion vocacional</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerDiagnostico">Psicodiagnóstico Clínico</a></li>
             </ul>
           </li>
 
@@ -56,44 +56,310 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <input id="inputSearch" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
       </div>
     </div>
   </nav>
-      <!-- Button trigger modal 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-        </button> Modal -->
+  <!-- Modal -->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enviame un mail con tu consulta...</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="">
-                    <div class="modal-body">
-                        <h7>Dejeme saber</h7><br><br>
-                        <input type="email" placeholder="Ingrese su e-mail"><br><br>
-                        <!--<input type="text" name="" id="" placeholder="dejeme su consulta... ">-->
-                        <textarea name="TextoEmail" class="campoTexto" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button class="btn btn-outline-success" type="submit">Enviar</button>
-                    </div>
-                </form>
-                </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enviame un mail con tu consulta...</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            </div><br><br>
+            <form action="">
+                <div class="modal-body">
+                    <h7>Dejeme saber</h7><br><br>
+                    <input type="email" placeholder="Ingrese su e-mail"><br><br>
+                    <!--<input type="text" name="" id="" placeholder="dejeme su consulta... ">-->
+                    <textarea name="TextoEmail" class="campoTexto" cols="30" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-outline-success" type="submit">Enviar</button>
+                </div>
+            </form>
+            </div>
+        </div>
+      </div>
+      <!--modal online-->
+      
+      <div class="modal fade" id="ModalTerOnline" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia en línea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <h7>Descubre la comodidad y flexibilidad de la terapia en línea. 
+                      Nuestras sesiones por videoconferencia te brindan acceso a un apoyo profesional sin importar tu ubicación. 
+                      Precios personalizados basados en la duración y frecuencia de las sesiones.
+                  </h7>
+                  <br><br>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+            
+            </div>
+        </div>
+      </div>
+
+      <!--modal adolecentes-->
+      
+      <div class="modal fade" id="ModalTerAdolecentes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia para Adolescentes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Reconocemos las complejidades de la adolescencia y ofrecemos un espacio seguro para que los adolescentes exploren sus emociones y desafíos. 
+                    Las tarifas se adaptan a las necesidades únicas de cada joven.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+
+      <!--modal mayores-->
+      
+      <div class="modal fade" id="ModalTerMayores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia para Personas Mayores</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Nuestra terapia para personas mayores se centra en el bienestar y la calidad de vida en la edad dorada. 
+                    Los precios se ajustan para garantizar un acceso asequible a la atención especializada.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+
+      <!--modal parejas-->
+      
+      <div class="modal fade" id="ModalTerParejas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia de Parejas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Las relaciones requieren atención y cuidado. Ofrecemos terapia de pareja con tarifas que reflejan la 
+                    importancia de mantener una conexión emocional sólida.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+      <!--modal panico-->
+      
+      <div class="modal fade" id="ModalTerPanico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia para Ataques de Pánico</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Experimenta alivio y recuperación de tus ataques de pánico. 
+                    Los precios se adaptan para brindarte el apoyo que necesitas en tu proceso de sanación.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+      <!--modal deprecion-->
+      
+      <div class="modal fade" id="ModalTerDeprecion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia para la Depresión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Enfrenta la depresión con la ayuda de nuestros profesionales. 
+                    Las tarifas son flexibles y diseñadas para asegurar que la terapia sea accesible en momentos de dificultad.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+      <!--modal autoestima-->
+      
+      <div class="modal fade" id="ModalTerAutoestima" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia para la Autoestima</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Aumenta tu autoestima y confianza. 
+                    Nuestra terapia está diseñada para empoderarte, con precios que reflejan nuestro compromiso con tu crecimiento personal.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+      <!--modal infancia-->
+      
+      <div class="modal fade" id="ModalTerInfancia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terapia para Trastornos de la Infancia y Adolescencia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Los niños y adolescentes merecen un apoyo especializado. 
+                    Ofrecemos tarifas adaptadas para que las familias puedan acceder a la ayuda que necesitan.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+      <!--modal vocacional-->
+      
+      <div class="modal fade" id="ModalTerVocacional" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Orientación Vocacional</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>Encuentra tu camino profesional con nuestra orientación vocacional. 
+                    Los precios son competitivos, y estamos dedicados a ayudarte a tomar decisiones informadas sobre tu futuro.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+
+      <!--modal diagnostico-->
+      
+      <div class="modal fade" id="ModalTerDiagnostico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Psicodiagnóstico Clínico</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="modal-body">
+                  <br>
+                  <h7>El proceso de Psicodiagnóstico implica una evaluación psicológica tanto por medio de entrevista como a través de aplicación de test que permitan 
+                    conocer aspectos globales y minuciosos de la personalidad así como también de la conducta de una persona. 
+                    El mismo se aplica tanto a niños, adolescentes y adultos, puede ser solicitado y aplicado en varios ámbitos y situaciones de la vida de una persona. 
+                    Puede ser demandado tanto por el paciente mismo con intención de conocerse a sí mismo, o requerido desde una institución.</h7>
+                  <br><br>
+      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="">
+                      <button class="btn btn-outline-success" type="submit">LLamame</button>
+                    </a>
+                </div>
+                      
+            </div>
+        </div>
+      </div>
+      <br><br>
+      
             <div class="contenedorCentrado">
                 <div class="container overflow-hidden"><!--conteiner que mantiene en el medio-->    
                     
                         <div class="contenedorfotoCarne">
-                            <img id="fotoCarne" src="Imgs/Eli.png" class="img-fluid" alt="...">
+                            <img id="fotoCarne" src="Imgs/Eli.png" class="img-fluid" alt="..."><br><br>
                             <p>Soy un psicólogo graduado de la Universidad de la República (Udelar). Durante mi formación académica, he continuado mi desarrollo profesional mediante la participación en diversos cursos y talleres, lo que me ha permitido adquirir una amplia gama de habilidades y conocimientos complementarios. 
                             Mi constante búsqueda de formación y especialización ha enriquecido mi práctica profesional y me ha permitido ofrecer un enfoque más completo y especializado en la psicología. </p>
                         </div>

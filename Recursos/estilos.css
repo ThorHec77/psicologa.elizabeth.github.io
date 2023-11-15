@@ -57,3 +57,7 @@ body {
     max-height: 200px;
     min-height: 100px;
 }
+
+#iconoGit {
+    height: 30px;
+}

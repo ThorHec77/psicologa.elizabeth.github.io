@@ -62,3 +62,12 @@ body {
 #iconoGit {
     height: 30px;
 }
+
+.search-highlight {
+    background-color: #007bff; /* Color azul de resaltado */
+    color: #fff; /* Texto blanco para contrastar */
+}
+
+#searchResultMessage {
+    color: red;
+}

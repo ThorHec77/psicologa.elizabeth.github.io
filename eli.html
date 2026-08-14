@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Elizabeth Camejo | Sobre Mí</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="Recursos/estilos.css" rel="stylesheet">
+    <link rel="icon" href="Imgs/IconoPestaña.png">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img class="LogoInicio" src="Imgs/LogoEli.png" alt="Logo Elizabeth Camejo">
+                <span class="brand-text">Lic. Elizabeth Camejo</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="eli.html">Sobre Mí</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="tratamientosDropdown" role="button" data-bs-toggle="dropdown">
+                            Tratamientos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerOnline">Terapia Online</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerAdolecentes">Terapia Adolescentes</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerMayores">Terapia Mayores</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerParejas">Terapia de Parejas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerPanico">Ataques de Pánico</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerDeprecion">Depresión</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerAutoestima">Autoestima</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerInfancia">Trastornos Infancia</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerVocacional">Orientación Vocacional</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalTerDiagnostico">Psicodiagnóstico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="video.html">Videoteca</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-contact" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fas fa-envelope me-1"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SOBRE MÍ ========== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-50 py-5">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <span class="section-tag">Conóceme</span>
+                    <h1 class="display-4 fw-bold">Sobre <span class="highlight">Mí</span></h1>
+                    <div class="section-line mx-auto"></div>
+                    <p class="lead text-muted">Descubre mi trayectoria profesional y mi enfoque terapéutico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PERFIL PROFESIONAL ========== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image">
+                            <img id="fotoCarne" src="Imgs/Eli.png" alt="Elizabeth Camejo" class="img-fluid">
+                        </div>
+                        <div class="profile-badge">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Lic. en Psicología - Udelar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <h2 class="display-6 fw-bold mb-3">Lic. <span class="highlight">Elizabeth Camejo</span></h2>
+                    <p class="lead">Psicóloga graduada de la Universidad de la República (Udelar)</p>
+                    <p>Soy una psicóloga apasionada por el bienestar emocional y el crecimiento personal. Durante mi formación académica, he continuado mi desarrollo profesional mediante la participación en diversos cursos y talleres, lo que me ha permitido adquirir una amplia gama de habilidades y conocimientos complementarios.</p>
+                    <p>Mi constante búsqueda de formación y especialización ha enriquecido mi práctica profesional y me ha permitido ofrecer un enfoque más completo y especializado en la psicología.</p>
+                    
+                    <div class="row g-3 mt-4">
+                        <div class="col-sm-6">
+                            <div class="info-card">
+                                <i class="fas fa-calendar-check text-primary"></i>
+                                <div>
+                                    <strong>Experiencia</strong>
+                                    <p>Con trayectoria</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-card">
+                                <i class="fas fa-users text-primary"></i>
+                                <div>
+                                    <strong>Pacientes</strong>
+                                    <p>Salud mental = bienestar emocional</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-card">
+                                <i class="fas fa-university text-primary"></i>
+                                <div>
+                                    <strong>Formación</strong>
+                                    <p>Udelar y especializaciones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-card">
+                                <i class="fas fa-heart text-primary"></i>
+                                <div>
+                                    <strong>Enfoque</strong>
+                                    <p>Humanista e integral</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FORMACIÓN ACADÉMICA ========== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Formación</span>
+                <h2 class="display-5 fw-bold">Mi Trayectoria <span class="highlight">Académica</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-card">
+                        <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="education-content">
+                            <h5>Licenciatura en Psicología</h5>
+                            <p class="institution">Universidad de la República (Udelar)</p>
+                            <span class="badge bg-primary">Completado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-card">
+                        <div class="education-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="education-content">
+                            <h5>Mediadores Terapéuticos</h5>
+                            <p class="institution">Facultad de Psicología - Udelar</p>
+                            <span class="badge bg-primary">2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="education-card">
+                        <div class="education-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="education-content">
+                            <h5>Relatos Adolescentes - Escuchas Psicoanalíticas</h5>
+                            <p class="institution">Facultad de Psicología - Udelar</p>
+                            <span class="badge bg-primary">2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="education-card">
+                        <div class="education-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div class="education-content">
+                            <h5>Proyecto de Intervención - Diversidad de Género</h5>
+                            <p class="institution">Facultad de Psicología - Udelar</p>
+                            <span class="badge bg-primary">2021-2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FORMACIÓN COMPLETA ========== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="fw-bold mb-4"><i class="fas fa-university text-primary me-2"></i>Formación Universitaria</h3>
+                    <ul class="education-list">
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Facultad de Psicología</strong>
+                                <p>Lic. en Psicología - Udelar</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Curso de Mediadores Terapéuticos</strong>
+                                <p>Facultad de Psicología - Udelar (2022)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Relatos adolescentes - escuchas psicoanalíticas</strong>
+                                <p>Facultad de Psicología - Udelar (2022)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Consumo de sustancias psicoactivas en Uruguay</strong>
+                                <p>Facultad de Psicología - Udelar (2022)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="fw-bold mb-4"><i class="fas fa-briefcase text-primary me-2"></i>Prácticas Profesionales</h3>
+                    <ul class="education-list">
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Proyecto de intervención</strong>
+                                <p>Diversidad de género e intrafamiliar - Servicio CRAM (2021-2022)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Práctica Anual</strong>
+                                <p>Diversidad de Género - Servicio CRAM (2020)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Práctica Anual</strong>
+                                <p>Abordaje en violencia de Género (2019)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <div>
+                                <strong>Proyecto de investigación-extensión</strong>
+                                <p>Cooperativismo, Asociativismo y Economía Solidaria (2018)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ENFOQUE TERAPÉUTICO ========== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Enfoque</span>
+                <h2 class="display-5 fw-bold">Mi <span class="highlight">Metodología</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="approach-card">
+                        <div class="approach-icon"><i class="fas fa-user-check"></i></div>
+                        <h5>Enfoque Humanista</h5>
+                        <p>Pongo a la persona en el centro del proceso, respetando su singularidad y potencial de crecimiento.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="approach-card">
+                        <div class="approach-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h5>Empatía y Escucha Activa</h5>
+                        <p>Creo un espacio seguro donde puedas expresarte libremente y ser escuchado sin juicios.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="approach-card">
+                        <div class="approach-icon"><i class="fas fa-brain"></i></div>
+                        <h5>Enfoque Integral</h5>
+                        <p>Abordo la salud mental desde una perspectiva holística, considerando todos los aspectos de tu vida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REDES SOCIALES ========== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h3 class="fw-bold mb-4">Conectemos en <span class="highlight">Redes Sociales</span></h3>
+                <div class="social-icons-large">
+                    <a href="#" class="social-icon-large" onmouseover="cambiarImg('Imgs/Faceboock1.png')" onmouseout="cambiarImg('Imgs/Faceboock2.png')">
+                        <img id="faceboock" src="Imgs/Faceboock2.png" alt="Facebook">
+                    </a>
+                    <a href="https://wa.me/+59899518453" target="_blank" class="social-icon-large" onmouseover="cambiarImg1('Imgs/Whatsapp1.png')" onmouseout="cambiarImg1('Imgs/Whatsapp2.png')">
+                        <img id="whatsapp" src="Imgs/Whatsapp2.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://ig.me/m/@elizabeth_camejo1989" target="_blank" class="social-icon-large" onmouseover="cambiarImg2('Imgs/Instagram1.png')" onmouseout="cambiarImg2('Imgs/Instagram2.png')">
+                        <img id="instagram" src="Imgs/Instagram2.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODALES ========== -->
+    <!-- Modal Contacto -->
+    <div class="modal fade" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-envelope text-primary me-2"></i>Contáctame</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Online -->
+    <div class="modal fade" id="ModalTerOnline" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-laptop-medical text-primary me-2"></i>Terapia en Línea</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Descubre la comodidad y flexibilidad de la terapia en línea. Nuestras sesiones por videoconferencia te brindan acceso a un apoyo profesional sin importar tu ubicación.</p>
+                    <p><strong>Beneficios:</strong></p>
+                    <ul>
+                        <li>Acceso desde cualquier lugar</li>
+                        <li>Horarios flexibles</li>
+                        <li>Confidencialidad garantizada</li>
+                        <li>Misma calidad que la terapia presencial</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Adolescentes -->
+    <div class="modal fade" id="ModalTerAdolecentes" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-users text-primary me-2"></i>Terapia para Adolescentes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Reconocemos las complejidades de la adolescencia y ofrecemos un espacio seguro para que los adolescentes exploren sus emociones y desafíos.</p>
+                    <p><strong>Abordamos:</strong></p>
+                    <ul>
+                        <li>Ansiedad y estrés adolescente</li>
+                        <li>Problemas de autoestima</li>
+                        <li>Conflictos familiares</li>
+                        <li>Dificultades académicas</li>
+                        <li>Transiciones y cambios</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Mayores -->
+    <div class="modal fade" id="ModalTerMayores" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-heart text-primary me-2"></i>Terapia para Personas Mayores</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Nuestra terapia para personas mayores se centra en el bienestar y la calidad de vida en la edad dorada.</p>
+                    <p><strong>Trabajamos:</strong></p>
+                    <ul>
+                        <li>Adaptación a cambios vitales</li>
+                        <li>Manejo de pérdidas y duelos</li>
+                        <li>Depresión en la vejez</li>
+                        <li>Autoestima y sentido de vida</li>
+                        <li>Relaciones familiares</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Parejas -->
+    <div class="modal fade" id="ModalTerParejas" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-heart text-primary me-2"></i>Terapia de Parejas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Las relaciones requieren atención y cuidado. Ofrecemos terapia de pareja con tarifas que reflejan la importancia de mantener una conexión emocional sólida.</p>
+                    <p><strong>Abordamos:</strong></p>
+                    <ul>
+                        <li>Conflictos de comunicación</li>
+                        <li>Infidelidad y confianza</li>
+                        <li>Problemas de intimidad</li>
+                        <li>Diferencias y reconciliación</li>
+                        <li>Transiciones familiares</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ataques de Pánico -->
+    <div class="modal fade" id="ModalTerPanico" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-exclamation-triangle text-primary me-2"></i>Ataques de Pánico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Experimenta alivio y recuperación de tus ataques de pánico. Los precios se adaptan para brindarte el apoyo que necesitas en tu proceso de sanación.</p>
+                    <p><strong>Estrategias:</strong></p>
+                    <ul>
+                        <li>Técnicas de respiración y relajación</li>
+                        <li>Reestructuración cognitiva</li>
+                        <li>Manejo de la ansiedad anticipatoria</li>
+                        <li>Prevención de recaídas</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Depresión -->
+    <div class="modal fade" id="ModalTerDeprecion" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-cloud-rain text-primary me-2"></i>Depresión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Enfrenta la depresión con la ayuda de nuestros profesionales. Las tarifas son flexibles y diseñadas para asegurar que la terapia sea accesible en momentos de dificultad.</p>
+                    <p><strong>Enfoque:</strong></p>
+                    <ul>
+                        <li>Terapia cognitivo-conductual</li>
+                        <li>Manejo de pensamientos negativos</li>
+                        <li>Activación conductual</li>
+                        <li>Acompañamiento integral</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Autoestima -->
+    <div class="modal fade" id="ModalTerAutoestima" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-star text-primary me-2"></i>Autoestima</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Aumenta tu autoestima y confianza. Nuestra terapia está diseñada para empoderarte, con precios que reflejan nuestro compromiso con tu crecimiento personal.</p>
+                    <p><strong>Trabajamos:</strong></p>
+                    <ul>
+                        <li>Autoconocimiento y autocompasión</li>
+                        <li>Reconocimiento de fortalezas</li>
+                        <li>Superación de creencias limitantes</li>
+                        <li>Desarrollo de seguridad personal</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Trastornos Infancia -->
+    <div class="modal fade" id="ModalTerInfancia" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-child text-primary me-2"></i>Trastornos de la Infancia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Los niños y adolescentes merecen un apoyo especializado. Ofrecemos tarifas adaptadas para que las familias puedan acceder a la ayuda que necesitan.</p>
+                    <p><strong>Abordamos:</strong></p>
+                    <ul>
+                        <li>Trastornos de conducta</li>
+                        <li>Dificultades de aprendizaje</li>
+                        <li>Problemas emocionales infantiles</li>
+                        <li>Terapia lúdica y artística</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Orientación Vocacional -->
+    <div class="modal fade" id="ModalTerVocacional" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-compass text-primary me-2"></i>Orientación Vocacional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Encuentra tu camino profesional con nuestra orientación vocacional. Los precios son competitivos, y estamos dedicados a ayudarte a tomar decisiones informadas sobre tu futuro.</p>
+                    <p><strong>Proceso:</strong></p>
+                    <ul>
+                        <li>Test de intereses vocacionales</li>
+                        <li>Análisis de habilidades y aptitudes</li>
+                        <li>Exploración de opciones profesionales</li>
+                        <li>Acompañamiento en decisiones</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Psicodiagnóstico -->
+    <div class="modal fade" id="ModalTerDiagnostico" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-stethoscope text-primary me-2"></i>Psicodiagnóstico Clínico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El proceso de Psicodiagnóstico implica una evaluación psicológica tanto por medio de entrevista como a través de aplicación de test que permitan conocer aspectos globales y minuciosos de la personalidad así como también de la conducta de una persona.</p>
+                    <p><strong>Áreas de evaluación:</strong></p>
+                    <ul>
+                        <li>Evaluación de personalidad</li>
+                        <li>Análisis de conducta</li>
+                        <li>Diagnóstico diferencial</li>
+                        <li>Recomendaciones terapéuticas</li>
+                        <li>Aplicable a niños, adolescentes y adultos</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-heart text-primary me-2"></i>Lic. Elizabeth Camejo</h5>
+                    <p>Psicóloga dedicada a tu bienestar emocional y crecimiento personal.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="eli.html">Sobre Mí</a></li>
+                        <li><a href="video.html">Videoteca</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sígueme</h5>
+                    <div class="social-links-footer">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="mt-3 small text-muted">Desarrollador: <a href="https://github.com/ThorHec77" target="_blank"><i class="fab fa-github"></i> ThorHec</a></p>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p class="mb-0">&copy; 2026 Lic. Elizabeth Camejo - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800
+        });
+    </script>
+    <script src="Recursos/script.js"></script>
+</body>
+</html>

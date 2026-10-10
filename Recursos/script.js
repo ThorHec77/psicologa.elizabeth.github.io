@@ -1,6 +1,6 @@
-/// ========== TYPOGRAPHIC EFFECTS ==========
+// ========== TYPOGRAPHIC EFFECTS ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // AOS Initialization (ya está en el HTML, pero lo ponemos aquí también)
+    // AOS Initialization
     if (typeof AOS !== 'undefined') {
         AOS.init({
             once: true,
@@ -9,34 +9,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== CONTACT FORM ==========
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    // ========== CONTACT FORMS (AJAX) ==========
+    function setupContactForm(formId, alertId) {
+        const form = document.getElementById(formId);
+        const alertBox = document.getElementById(alertId);
+        if (!form) return;
+
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
+            const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
             btn.disabled = true;
+            if (alertBox) alertBox.className = 'alert d-none';
 
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check me-2"></i>¡Mensaje enviado!';
-                btn.classList.add('btn-success');
-                btn.classList.remove('btn-primary');
-                setTimeout(() => {
+            try {
+                const formData = new FormData(form);
+                const res = await fetch(form.getAttribute('action') || 'send_email.php', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+                const data = await res.json();
+
+                if (alertBox) {
+                    alertBox.className = 'alert ' + (data.success ? 'alert-success' : 'alert-danger');
+                    alertBox.textContent = data.message;
+                }
+
+                if (data.success) {
+                    btn.innerHTML = '<i class="fas fa-check me-2"></i>¡Enviado!';
+                    btn.classList.add('btn-success');
+                    btn.classList.remove('btn-primary');
+                    form.reset();
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('btn-success');
+                        btn.classList.add('btn-primary');
+                        btn.disabled = false;
+                        if (alertBox) alertBox.className = 'alert d-none';
+                    }, 4000);
+                } else {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
-                    btn.classList.remove('btn-success');
-                    btn.classList.add('btn-primary');
-                    contactForm.reset();
-                }, 3000);
-            }, 1500);
+                }
+            } catch (err) {
+                console.error(err);
+                if (alertBox) {
+                    alertBox.className = 'alert alert-danger';
+                    alertBox.textContent = 'Error de red. Intenta nuevamente.';
+                }
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
         });
     }
 
+    setupContactForm('contactForm', 'contactFormAlert');       // formulario sección final
+    setupContactForm('contactFormModal', 'modalFormAlert');    // formulario modal agendar cita
+
     // ========== NAVBAR SCROLL ==========
     const navbar = document.getElementById('mainNav');
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         if (currentScroll > 50) {
@@ -46,17 +79,16 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.boxShadow = '0 1px 20px rgba(0,0,0,0.06)';
             navbar.style.background = 'rgba(255,255,255,0.95)';
         }
-        lastScroll = currentScroll;
     });
 
     // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            if (targetId !== '#') {
-                e.preventDefault();
+            if (targetId !== '#' && targetId.length > 1) {
                 const target = document.querySelector(targetId);
                 if (target) {
+                    e.preventDefault();
                     const offsetTop = target.offsetTop - 80;
                     window.scrollTo({
                         top: offsetTop,
@@ -67,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ========== SEARCH FUNCTION (mejorada) ==========
+    // ========== SEARCH FUNCTION ==========
     const formSearch = document.getElementById('formSearch');
     const inputSearch = document.getElementById('inputSearch');
     const searchResultMessage = document.getElementById('searchResultMessage');
@@ -76,18 +108,16 @@ document.addEventListener('DOMContentLoaded', function() {
         formSearch.addEventListener('submit', function(event) {
             event.preventDefault();
             const searchTerm = inputSearch.value.toLowerCase().trim();
-            
+
             if (searchTerm === '') {
                 searchResultMessage.textContent = 'Por favor, ingresa un término de búsqueda.';
                 return;
             }
 
-            // Remover resaltados anteriores
             document.querySelectorAll('.search-highlight').forEach(el => {
                 el.classList.remove('search-highlight');
             });
 
-            // Buscar en el contenido
             const allElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, .card-text, .hero-text');
             let found = false;
 
@@ -102,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (found) {
                 searchResultMessage.textContent = `✅ Se encontraron resultados para "${searchTerm}"`;
                 searchResultMessage.style.color = '#10B981';
-                // Scroll al primer resultado
                 const firstResult = document.querySelector('.search-highlight');
                 if (firstResult) {
                     firstResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -113,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Limpiar mensaje al escribir
         inputSearch.addEventListener('input', function() {
             if (this.value === '') {
                 searchResultMessage.textContent = '';
@@ -124,16 +152,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== IMAGE HOVER EFFECTS (mantener compatibilidad) ==========
-    // Las funciones existentes de cambio de imágenes se mantienen
+    // ========== IMAGE HOVER EFFECTS ==========
     window.cambiarImg = function(img) {
-        document.getElementById('faceboock').src = img;
+        const el = document.getElementById('faceboock');
+        if (el) el.src = img;
     };
     window.cambiarImg1 = function(img) {
-        document.getElementById('whatsapp').src = img;
+        const el = document.getElementById('whatsapp');
+        if (el) el.src = img;
     };
     window.cambiarImg2 = function(img) {
-        document.getElementById('instagram').src = img;
+        const el = document.getElementById('instagram');
+        if (el) el.src = img;
     };
 });
 

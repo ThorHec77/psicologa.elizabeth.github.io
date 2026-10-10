@@ -83,9 +83,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/SGCHfhTGbDw?si=ZH0B1SAFvG4_-GV5" 
-                                    title="Campaña salud mental" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            <iframe src="https://www.youtube.com/embed/SGCHfhTGbDw?si=ZH0B1SAFvG4_-GV5"
+                                    title="Campaña salud mental"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                         </div>
                         <div class="video-content">
@@ -104,9 +104,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/QmFTLHbp1As?si=-a2rvLiyeV-Y8J2g" 
-                                    title="Ejemplo de terapia" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            <iframe src="https://www.youtube.com/embed/QmFTLHbp1As?si=-a2rvLiyeV-Y8J2g"
+                                    title="Ejemplo de terapia"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                         </div>
                         <div class="video-content">
@@ -125,9 +125,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/3p-5Qe0rDzk?si=RPjtOKwyF5f-o9wC" 
-                                    title="Importancia del tratamiento" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            <iframe src="https://www.youtube.com/embed/3p-5Qe0rDzk?si=RPjtOKwyF5f-o9wC"
+                                    title="Importancia del tratamiento"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                         </div>
                         <div class="video-content">
@@ -178,35 +178,63 @@
     </section>
 
     <!-- ========== MODALES ========== -->
-    <!-- Modal Contacto -->
+    <!-- Modal Contacto / Agendar Cita -->
     <div class="modal fade" id="exampleModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-envelope text-primary me-2"></i>Contáctame</h5>
+                    <h5 class="modal-title"><i class="fas fa-calendar-alt text-primary me-2"></i>Agendar Cita</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <form>
+                <form id="contactFormModal" action="send_email.php" method="POST">
                     <div class="modal-body">
+                        <div id="modalFormAlert" class="alert d-none" role="alert"></div>
+
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="tu@email.com" required>
+                            <label class="form-label">Nombre *</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Mensaje</label>
-                            <textarea class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
+                            <label class="form-label">Email *</label>
+                            <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" name="telefono" class="form-control" placeholder="+598 ...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Asunto *</label>
+                            <select name="asunto" class="form-control" required>
+                                <option value="">Selecciona un motivo...</option>
+                                <option value="Terapia Online">Terapia Online</option>
+                                <option value="Terapia Adolescentes">Terapia Adolescentes</option>
+                                <option value="Terapia Mayores">Terapia Mayores</option>
+                                <option value="Terapia de Parejas">Terapia de Parejas</option>
+                                <option value="Ataques de Pánico">Ataques de Pánico</option>
+                                <option value="Depresión">Depresión</option>
+                                <option value="Autoestima">Autoestima</option>
+                                <option value="Trastornos Infancia">Trastornos Infancia</option>
+                                <option value="Orientación Vocacional">Orientación Vocacional</option>
+                                <option value="Psicodiagnóstico">Psicodiagnóstico</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje *</label>
+                            <textarea name="mensaje" class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Enviar
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Todos los modales de tratamientos (los mismos que en el index) -->
     <!-- Modal Terapia Online -->
     <div class="modal fade" id="ModalTerOnline" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">

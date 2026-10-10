@@ -82,7 +82,7 @@
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="profile-image-wrapper">
                         <div class="profile-image">
-                            <img id="fotoCarne" src="Imgs/Eli.png" alt="Elizabeth Camejo" class="img-fluid">
+                            <img src="Imgs/Eli.png" alt="Elizabeth Camejo" class="img-fluid">
                         </div>
                         <div class="profile-badge">
                             <i class="fas fa-graduation-cap"></i>
@@ -95,7 +95,7 @@
                     <p class="lead">Psicóloga graduada de la Universidad de la República (Udelar)</p>
                     <p>Soy una psicóloga apasionada por el bienestar emocional y el crecimiento personal. Durante mi formación académica, he continuado mi desarrollo profesional mediante la participación en diversos cursos y talleres, lo que me ha permitido adquirir una amplia gama de habilidades y conocimientos complementarios.</p>
                     <p>Mi constante búsqueda de formación y especialización ha enriquecido mi práctica profesional y me ha permitido ofrecer un enfoque más completo y especializado en la psicología.</p>
-                    
+
                     <div class="row g-3 mt-4">
                         <div class="col-sm-6">
                             <div class="info-card">
@@ -321,28 +321,57 @@
     </section>
 
     <!-- ========== MODALES ========== -->
-    <!-- Modal Contacto -->
+    <!-- Modal Contacto / Agendar Cita -->
     <div class="modal fade" id="exampleModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-envelope text-primary me-2"></i>Contáctame</h5>
+                    <h5 class="modal-title"><i class="fas fa-calendar-alt text-primary me-2"></i>Agendar Cita</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <form>
+                <form id="contactFormModal" action="send_email.php" method="POST">
                     <div class="modal-body">
+                        <div id="modalFormAlert" class="alert d-none" role="alert"></div>
+
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="tu@email.com" required>
+                            <label class="form-label">Nombre *</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Mensaje</label>
-                            <textarea class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
+                            <label class="form-label">Email *</label>
+                            <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" name="telefono" class="form-control" placeholder="+598 ...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Asunto *</label>
+                            <select name="asunto" class="form-control" required>
+                                <option value="">Selecciona un motivo...</option>
+                                <option value="Terapia Online">Terapia Online</option>
+                                <option value="Terapia Adolescentes">Terapia Adolescentes</option>
+                                <option value="Terapia Mayores">Terapia Mayores</option>
+                                <option value="Terapia de Parejas">Terapia de Parejas</option>
+                                <option value="Ataques de Pánico">Ataques de Pánico</option>
+                                <option value="Depresión">Depresión</option>
+                                <option value="Autoestima">Autoestima</option>
+                                <option value="Trastornos Infancia">Trastornos Infancia</option>
+                                <option value="Orientación Vocacional">Orientación Vocacional</option>
+                                <option value="Psicodiagnóstico">Psicodiagnóstico</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje *</label>
+                            <textarea name="mensaje" class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Enviar
+                        </button>
                     </div>
                 </form>
             </div>

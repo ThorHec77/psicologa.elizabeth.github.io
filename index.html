@@ -79,7 +79,7 @@
                 <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="hero-image-wrapper">
                         <div class="hero-image">
-                            <img id="fotoCarne" src="Imgs/Eli.png" alt="Elizabeth Camejo" class="img-fluid">
+                            <img src="Imgs/Eli.png" alt="Elizabeth Camejo" class="img-fluid">
                         </div>
                         <div class="floating-card card1">
                             <i class="fas fa-check-circle"></i>
@@ -235,18 +235,41 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="card shadow-sm p-4">
-                        <form id="contactForm">
+                        <form id="contactForm" action="send_email.php" method="POST">
+                            <div id="contactFormAlert" class="alert d-none" role="alert"></div>
+
                             <div class="mb-3">
-                                <label class="form-label">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Tu nombre" required>
+                                <label class="form-label">Nombre *</label>
+                                <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" placeholder="tu@email.com" required>
+                                <label class="form-label">Email *</label>
+                                <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Mensaje</label>
-                                <textarea class="form-control" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                                <label class="form-label">Teléfono</label>
+                                <input type="tel" name="telefono" class="form-control" placeholder="+598 ...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Asunto *</label>
+                                <select name="asunto" class="form-control" required>
+                                    <option value="">Selecciona un motivo...</option>
+                                    <option value="Terapia Online">Terapia Online</option>
+                                    <option value="Terapia Adolescentes">Terapia Adolescentes</option>
+                                    <option value="Terapia Mayores">Terapia Mayores</option>
+                                    <option value="Terapia de Parejas">Terapia de Parejas</option>
+                                    <option value="Ataques de Pánico">Ataques de Pánico</option>
+                                    <option value="Depresión">Depresión</option>
+                                    <option value="Autoestima">Autoestima</option>
+                                    <option value="Trastornos Infancia">Trastornos Infancia</option>
+                                    <option value="Orientación Vocacional">Orientación Vocacional</option>
+                                    <option value="Psicodiagnóstico">Psicodiagnóstico</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje *</label>
+                                <textarea name="mensaje" class="form-control" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">
                                 <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
@@ -259,36 +282,346 @@
     </section>
 
     <!-- ========== MODALES ========== -->
-    <!-- Modal Contacto -->
+    <!-- Modal Contacto / Agendar Cita -->
     <div class="modal fade" id="exampleModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-envelope text-primary me-2"></i>Contáctame</h5>
+                    <h5 class="modal-title"><i class="fas fa-calendar-alt text-primary me-2"></i>Agendar Cita</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <form>
+                <form id="contactFormModal" action="send_email.php" method="POST">
                     <div class="modal-body">
+                        <div id="modalFormAlert" class="alert d-none" role="alert"></div>
+
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="tu@email.com" required>
+                            <label class="form-label">Nombre *</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Mensaje</label>
-                            <textarea class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
+                            <label class="form-label">Email *</label>
+                            <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" name="telefono" class="form-control" placeholder="+598 ...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Asunto *</label>
+                            <select name="asunto" class="form-control" required>
+                                <option value="">Selecciona un motivo...</option>
+                                <option value="Terapia Online">Terapia Online</option>
+                                <option value="Terapia Adolescentes">Terapia Adolescentes</option>
+                                <option value="Terapia Mayores">Terapia Mayores</option>
+                                <option value="Terapia de Parejas">Terapia de Parejas</option>
+                                <option value="Ataques de Pánico">Ataques de Pánico</option>
+                                <option value="Depresión">Depresión</option>
+                                <option value="Autoestima">Autoestima</option>
+                                <option value="Trastornos Infancia">Trastornos Infancia</option>
+                                <option value="Orientación Vocacional">Orientación Vocacional</option>
+                                <option value="Psicodiagnóstico">Psicodiagnóstico</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje *</label>
+                            <textarea name="mensaje" class="form-control" rows="5" placeholder="Cuéntame sobre ti..." required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Enviar
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Todos los modales de tratamientos aquí... -->
-    <!-- (Mantén la misma estructura de modales que ya tienes) -->
+    <!-- Modal Terapia Online -->
+    <div class="modal fade" id="ModalTerOnline" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-laptop-medical text-primary me-2"></i>Terapia en Línea</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Descubre la comodidad y flexibilidad de la terapia en línea. Nuestras sesiones por videoconferencia te brindan acceso a un apoyo profesional sin importar tu ubicación.</p>
+                    <p><strong>Beneficios:</strong></p>
+                    <ul>
+                        <li>Acceso desde cualquier lugar</li>
+                        <li>Horarios flexibles</li>
+                        <li>Confidencialidad garantizada</li>
+                        <li>Misma calidad que la terapia presencial</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Adolescentes -->
+    <div class="modal fade" id="ModalTerAdolecentes" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-users text-primary me-2"></i>Terapia para Adolescentes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Reconocemos las complejidades de la adolescencia y ofrecemos un espacio seguro para que los adolescentes exploren sus emociones y desafíos.</p>
+                    <p><strong>Abordamos:</strong></p>
+                    <ul>
+                        <li>Ansiedad y estrés adolescente</li>
+                        <li>Problemas de autoestima</li>
+                        <li>Conflictos familiares</li>
+                        <li>Dificultades académicas</li>
+                        <li>Transiciones y cambios</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Mayores -->
+    <div class="modal fade" id="ModalTerMayores" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-heart text-primary me-2"></i>Terapia para Personas Mayores</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Nuestra terapia para personas mayores se centra en el bienestar y la calidad de vida en la edad dorada.</p>
+                    <p><strong>Trabajamos:</strong></p>
+                    <ul>
+                        <li>Adaptación a cambios vitales</li>
+                        <li>Manejo de pérdidas y duelos</li>
+                        <li>Depresión en la vejez</li>
+                        <li>Autoestima y sentido de vida</li>
+                        <li>Relaciones familiares</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Parejas -->
+    <div class="modal fade" id="ModalTerParejas" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-heart text-primary me-2"></i>Terapia de Parejas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Las relaciones requieren atención y cuidado. Ofrecemos terapia de pareja con tarifas que reflejan la importancia de mantener una conexión emocional sólida.</p>
+                    <p><strong>Abordamos:</strong></p>
+                    <ul>
+                        <li>Conflictos de comunicación</li>
+                        <li>Infidelidad y confianza</li>
+                        <li>Problemas de intimidad</li>
+                        <li>Diferencias y reconciliación</li>
+                        <li>Transiciones familiares</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ataques de Pánico -->
+    <div class="modal fade" id="ModalTerPanico" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-exclamation-triangle text-primary me-2"></i>Ataques de Pánico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Experimenta alivio y recuperación de tus ataques de pánico. Los precios se adaptan para brindarte el apoyo que necesitas en tu proceso de sanación.</p>
+                    <p><strong>Estrategias:</strong></p>
+                    <ul>
+                        <li>Técnicas de respiración y relajación</li>
+                        <li>Reestructuración cognitiva</li>
+                        <li>Manejo de la ansiedad anticipatoria</li>
+                        <li>Prevención de recaídas</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Depresión -->
+    <div class="modal fade" id="ModalTerDeprecion" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-cloud-rain text-primary me-2"></i>Depresión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Enfrenta la depresión con la ayuda de nuestros profesionales. Las tarifas son flexibles y diseñadas para asegurar que la terapia sea accesible en momentos de dificultad.</p>
+                    <p><strong>Enfoque:</strong></p>
+                    <ul>
+                        <li>Terapia cognitivo-conductual</li>
+                        <li>Manejo de pensamientos negativos</li>
+                        <li>Activación conductual</li>
+                        <li>Acompañamiento integral</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Autoestima -->
+    <div class="modal fade" id="ModalTerAutoestima" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-star text-primary me-2"></i>Autoestima</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Aumenta tu autoestima y confianza. Nuestra terapia está diseñada para empoderarte, con precios que reflejan nuestro compromiso con tu crecimiento personal.</p>
+                    <p><strong>Trabajamos:</strong></p>
+                    <ul>
+                        <li>Autoconocimiento y autocompasión</li>
+                        <li>Reconocimiento de fortalezas</li>
+                        <li>Superación de creencias limitantes</li>
+                        <li>Desarrollo de seguridad personal</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Trastornos Infancia -->
+    <div class="modal fade" id="ModalTerInfancia" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-child text-primary me-2"></i>Trastornos de la Infancia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Los niños y adolescentes merecen un apoyo especializado. Ofrecemos tarifas adaptadas para que las familias puedan acceder a la ayuda que necesitan.</p>
+                    <p><strong>Abordamos:</strong></p>
+                    <ul>
+                        <li>Trastornos de conducta</li>
+                        <li>Dificultades de aprendizaje</li>
+                        <li>Problemas emocionales infantiles</li>
+                        <li>Terapia lúdica y artística</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Orientación Vocacional -->
+    <div class="modal fade" id="ModalTerVocacional" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-compass text-primary me-2"></i>Orientación Vocacional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Encuentra tu camino profesional con nuestra orientación vocacional. Los precios son competitivos, y estamos dedicados a ayudarte a tomar decisiones informadas sobre tu futuro.</p>
+                    <p><strong>Proceso:</strong></p>
+                    <ul>
+                        <li>Test de intereses vocacionales</li>
+                        <li>Análisis de habilidades y aptitudes</li>
+                        <li>Exploración de opciones profesionales</li>
+                        <li>Acompañamiento en decisiones</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Psicodiagnóstico -->
+    <div class="modal fade" id="ModalTerDiagnostico" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-stethoscope text-primary me-2"></i>Psicodiagnóstico Clínico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El proceso de Psicodiagnóstico implica una evaluación psicológica tanto por medio de entrevista como a través de aplicación de test que permitan conocer aspectos globales y minuciosos de la personalidad así como también de la conducta de una persona.</p>
+                    <p><strong>Áreas de evaluación:</strong></p>
+                    <ul>
+                        <li>Evaluación de personalidad</li>
+                        <li>Análisis de conducta</li>
+                        <li>Diagnóstico diferencial</li>
+                        <li>Recomendaciones terapéuticas</li>
+                        <li>Aplicable a niños, adolescentes y adultos</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="tel:+59899518453" class="btn btn-primary">
+                        <i class="fas fa-phone me-2"></i>Llamar ahora
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ========== FOOTER ========== -->
     <footer>
